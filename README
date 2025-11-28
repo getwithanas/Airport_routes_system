@@ -1,0 +1,8 @@
+Project backend: Django app `routes` storing AirportRoute (airport_code, position, duration)
+Service functions: get_nth_node(direction, n), get_longest_route(), get_shortest_between_two(a1,a2)
+Views: add_route, nth_node_view, longest_route_view, shortest_route_view (validate and render)
+Endpoints: /add/ (create), /nth-node/ (nth lookup), /longest/, /shortest/?a1=<code>&a2=<code>
+Database: SQLite at db.sqlite3 (configured in settings.py)
+To start/validate: run `python manage.py check` and `python manage.py runserver`
+Forms: AirportRouteForm and NthNodeSearchForm provide basic server-side validation
+Notes: service functions return model instances or None; add error-handling for out-of-range `n` and missing codes
